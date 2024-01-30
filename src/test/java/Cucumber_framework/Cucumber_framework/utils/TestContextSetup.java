@@ -6,4 +6,12 @@ public class TestContextSetup {
 	public WebDriver driver;
 	public String[] productsLandingPage;
 	public String[] productsTopDealsPage;
+	public PageFactory factory;
+	public TestBase base;
+	
+	public TestContextSetup() {
+		base = new TestBase();
+		factory = new PageFactory(base.webDriverManager());
+	}
+	
 }

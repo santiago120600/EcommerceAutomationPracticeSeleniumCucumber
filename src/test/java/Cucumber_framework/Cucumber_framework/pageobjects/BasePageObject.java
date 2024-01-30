@@ -77,4 +77,8 @@ public class BasePageObject {
 		return find(locator).getText();
 	}
 	
+	public String getCurrentUrl() {
+		return driver.getCurrentUrl();
+	}
+	
 }

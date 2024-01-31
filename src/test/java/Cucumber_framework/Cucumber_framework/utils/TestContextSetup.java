@@ -8,6 +8,7 @@ public class TestContextSetup {
 	public String[] productsTopDealsPage;
 	public PageFactory factory;
 	public TestBase base;
+	public String[] productsCheckoutPage;
 	
 	public TestContextSetup() {
 		base = new TestBase();

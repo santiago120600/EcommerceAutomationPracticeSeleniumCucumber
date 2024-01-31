@@ -5,6 +5,7 @@ import org.testng.Assert;
 import Cucumber_framework.Cucumber_framework.pageobjects.LandingPage;
 import Cucumber_framework.Cucumber_framework.utils.TestContextSetup;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LandingPageStepDefinition {
@@ -26,7 +27,22 @@ public class LandingPageStepDefinition {
 	public void user_searched_with_shortname_and_extracted_actual_name_of_product(String shortName) {
 		landingPage.searchProduct(shortName);
 		testContextSetup.productsLandingPage = landingPage.getListedProductsName();
+	}
+	
+	@When("clicked on Top Deals")
+	public void clicked_on_top_deals() {
 		landingPage.clickTopDealsLink();
+	}
+	
+	@Then("add {int} items to cart")
+	public void add_items_to_cart(int numberOfProducts) {
+		landingPage.addItemsToCart(numberOfProducts);
+		testContextSetup.productsLandingPage = landingPage.getListedProductsFullName();
+	}
+	
+	@Then("navigate to checkout page")
+	public void navigate_to_checkout_page() {
+		landingPage.navigateToCheckout();
 	}
 
 }

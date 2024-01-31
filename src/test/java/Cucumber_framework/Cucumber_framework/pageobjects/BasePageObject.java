@@ -77,8 +77,20 @@ public class BasePageObject {
 		return find(locator).getText();
 	}
 	
+	protected String getText(WebElement element) {
+		return element.getText();
+	}
+	
 	public String getCurrentUrl() {
 		return driver.getCurrentUrl();
+	}
+	
+	public WebElement findWithinParent(By parentLocator, By childLocator) {
+		return find(parentLocator).findElement(childLocator);
+	}
+	
+	public WebElement findWithinParent(WebElement parentLocator, By childLocator) {
+		return parentLocator.findElement(childLocator);
 	}
 	
 }

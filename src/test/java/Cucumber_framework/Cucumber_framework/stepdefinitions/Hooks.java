@@ -16,8 +16,6 @@ public class Hooks {
 
 	@After
 	public void tearDown() {
-//		testContextSetup.driver.quit();
-//		testContextSetup.base.webDriverManager().quit();
 		testContextSetup.base.driver.quit();
 	}
 }

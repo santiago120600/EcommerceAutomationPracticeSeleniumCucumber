@@ -1,6 +1,8 @@
 package Cucumber_framework.Cucumber_framework.utils;
 
 import java.io.FileInputStream;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -27,5 +29,9 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
 		return driver;
+	}
+	
+	public boolean compareArrays(String[] arr1,String[] arr2) {
+		return new HashSet<String>(Arrays.asList(arr1)).equals(new HashSet<String>(Arrays.asList(arr2)));
 	}
 }

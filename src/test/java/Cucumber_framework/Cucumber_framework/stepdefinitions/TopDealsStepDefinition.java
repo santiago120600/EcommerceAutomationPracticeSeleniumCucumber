@@ -1,8 +1,5 @@
 package Cucumber_framework.Cucumber_framework.stepdefinitions;
 
-import java.util.Arrays;
-import java.util.HashSet;
-
 import org.testng.Assert;
 
 import Cucumber_framework.Cucumber_framework.pageobjects.TopDealsPage;
@@ -28,11 +25,7 @@ public class TopDealsStepDefinition {
 	
 	@Then("validate product name in offers page matches with Landing page")
 	public void validate_product_name_matches() {
-		Assert.assertTrue(compareArrays(testContextSetup.productsLandingPage, testContextSetup.productsTopDealsPage));
+		Assert.assertTrue(testContextSetup.base.compareArrays(testContextSetup.productsLandingPage, testContextSetup.productsTopDealsPage));
 	}
 	
-	public boolean compareArrays(String[] arr1,String[] arr2) {
-		return new HashSet<String>(Arrays.asList(arr1)).equals(new HashSet<String>(Arrays.asList(arr2)));
-	}
-
 }
